@@ -105,4 +105,4 @@ This project is open source and available under the MIT License.
 
 Contact
 
-For questions or feedback, contact the project maintainer at your-email@example.com.
+For questions or feedback, contact the project maintainer at your-kartikpant.kp69@gmail.com.
