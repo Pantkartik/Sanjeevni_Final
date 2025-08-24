@@ -1,0 +1,216 @@
+INFO 2025-08-24 14:07:58,849 autoreload 2748 2772 Watching for file changes with StatReloader
+INFO 2025-08-24 14:28:25,104 autoreload 10768 22576 Watching for file changes with StatReloader
+INFO 2025-08-24 14:30:15,897 autoreload 19960 25172 Watching for file changes with StatReloader
+INFO 2025-08-24 14:32:44,537 autoreload 19616 7324 Watching for file changes with StatReloader
+INFO 2025-08-24 14:34:52,176 autoreload 1196 4920 Watching for file changes with StatReloader
+INFO 2025-08-24 14:38:39,335 autoreload 10052 18352 Watching for file changes with StatReloader
+INFO 2025-08-24 14:39:53,690 autoreload 6948 12184 Watching for file changes with StatReloader
+INFO 2025-08-24 14:41:49,200 autoreload 6332 15592 Watching for file changes with StatReloader
+INFO 2025-08-24 14:43:12,680 autoreload 4456 1640 Watching for file changes with StatReloader
+INFO 2025-08-24 14:44:01,768 autoreload 20932 24992 Watching for file changes with StatReloader
+WARNING 2025-08-24 14:44:05,212 log 20932 18724 Not Found: /
+WARNING 2025-08-24 14:44:05,215 basehttp 20932 18724 "GET / HTTP/1.1" 404 2417
+WARNING 2025-08-24 14:44:05,318 log 20932 18724 Not Found: /favicon.ico
+WARNING 2025-08-24 14:44:05,319 basehttp 20932 18724 "GET /favicon.ico HTTP/1.1" 404 2468
+INFO 2025-08-24 14:45:01,137 autoreload 4376 16724 Watching for file changes with StatReloader
+WARNING 2025-08-24 14:45:04,744 log 4376 18076 Not Found: /
+WARNING 2025-08-24 14:45:04,745 basehttp 4376 18076 "GET / HTTP/1.1" 404 2417
+INFO 2025-08-24 14:45:26,662 autoreload 18356 5184 Watching for file changes with StatReloader
+WARNING 2025-08-24 14:45:40,632 log 18356 25628 Not Found: /
+WARNING 2025-08-24 14:45:40,633 basehttp 18356 25628 "GET / HTTP/1.1" 404 2417
+WARNING 2025-08-24 14:45:40,687 log 18356 25628 Not Found: /favicon.ico
+WARNING 2025-08-24 14:45:40,687 basehttp 18356 25628 "GET /favicon.ico HTTP/1.1" 404 2468
+INFO 2025-08-24 14:45:43,360 basehttp 18356 25628 "GET /admin HTTP/1.1" 301 0
+INFO 2025-08-24 14:45:43,390 basehttp 18356 19484 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-24 14:45:43,433 basehttp 18356 19484 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4155
+INFO 2025-08-24 14:45:43,466 basehttp 18356 19484 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-08-24 14:45:43,470 basehttp 18356 19484 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-08-24 14:45:43,472 basehttp 18356 19484 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-08-24 14:45:43,474 basehttp 18356 19484 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-08-24 14:45:43,476 basehttp 18356 19484 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-08-24 14:45:43,479 basehttp 18356 19484 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-08-24 14:45:43,481 basehttp 18356 19484 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-08-24 14:45:55,121 basehttp 18356 19484 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4313
+INFO 2025-08-24 14:46:01,689 basehttp 18356 19484 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4313
+INFO 2025-08-24 14:47:14,375 autoreload 13452 13328 Watching for file changes with StatReloader
+WARNING 2025-08-24 14:47:17,313 log 13452 18012 Not Found: /
+WARNING 2025-08-24 14:47:17,318 basehttp 13452 18012 "GET / HTTP/1.1" 404 2417
+WARNING 2025-08-24 14:47:17,431 log 13452 18012 Not Found: /favicon.ico
+WARNING 2025-08-24 14:47:17,435 basehttp 13452 18012 "GET /favicon.ico HTTP/1.1" 404 2468
+INFO 2025-08-24 14:49:01,992 autoreload 13452 13328 C:\Users\naman\react-demo\backend\health_api\views.py changed, reloading.
+INFO 2025-08-24 14:49:02,541 autoreload 14380 23012 Watching for file changes with StatReloader
+INFO 2025-08-24 14:49:20,236 autoreload 14380 23012 C:\Users\naman\react-demo\backend\health_api\urls.py changed, reloading.
+INFO 2025-08-24 14:49:20,761 autoreload 25480 12536 Watching for file changes with StatReloader
+INFO 2025-08-24 14:49:23,718 autoreload 25480 12536 C:\Users\naman\react-demo\backend\health_api\urls.py changed, reloading.
+INFO 2025-08-24 14:49:24,435 autoreload 18312 2660 Watching for file changes with StatReloader
+INFO 2025-08-24 14:49:35,911 autoreload 18312 2660 C:\Users\naman\react-demo\backend\backend\urls.py changed, reloading.
+INFO 2025-08-24 14:49:36,439 autoreload 24828 8744 Watching for file changes with StatReloader
+INFO 2025-08-24 14:49:38,315 autoreload 24828 8744 C:\Users\naman\react-demo\backend\backend\urls.py changed, reloading.
+INFO 2025-08-24 14:49:38,830 autoreload 18528 16732 Watching for file changes with StatReloader
+INFO 2025-08-24 14:50:58,244 basehttp 18528 1648 "GET / HTTP/1.1" 302 0
+INFO 2025-08-24 14:50:58,246 basehttp 18528 1648 "GET /api/ HTTP/1.1" 200 4826
+INFO 2025-08-24 14:51:04,139 basehttp 18528 1648 "GET /api/ HTTP/1.1" 200 4826
+INFO 2025-08-24 14:52:07,262 basehttp 18528 18012 "GET / HTTP/1.1" 302 0
+INFO 2025-08-24 14:52:07,271 basehttp 18528 18012 "GET /api/ HTTP/1.1" 200 4826
+WARNING 2025-08-24 14:52:07,356 log 18528 18012 Not Found: /favicon.ico
+WARNING 2025-08-24 14:52:07,356 basehttp 18528 18012 "GET /favicon.ico HTTP/1.1" 404 2581
+INFO 2025-08-24 14:52:16,791 basehttp 18528 18012 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-24 14:52:16,808 basehttp 18528 18012 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4155
+INFO 2025-08-24 14:52:16,944 basehttp 18528 18012 "GET /static/admin/css/base.css HTTP/1.1" 200 21544
+INFO 2025-08-24 14:52:16,948 basehttp 18528 18012 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-08-24 14:52:16,948 basehttp 18528 19352 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+INFO 2025-08-24 14:52:16,954 basehttp 18528 9208 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+INFO 2025-08-24 14:52:16,955 basehttp 18528 25824 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2025-08-24 14:52:16,955 basehttp 18528 21940 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2025-08-24 14:52:16,956 basehttp 18528 15176 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-08-24 14:52:36,452 basehttp 18528 15176 "GET / HTTP/1.1" 302 0
+INFO 2025-08-24 14:52:36,456 basehttp 18528 15176 "GET /api/ HTTP/1.1" 200 4826
+INFO 2025-08-24 14:53:22,978 basehttp 18528 22592 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4155
+INFO 2025-08-24 14:53:23,007 basehttp 18528 22592 "GET /static/admin/css/base.css HTTP/1.1" 200 21544
+INFO 2025-08-24 14:53:23,021 basehttp 18528 14588 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-08-24 14:53:23,021 basehttp 18528 22560 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2025-08-24 14:53:23,021 basehttp 18528 22592 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+INFO 2025-08-24 14:53:23,022 basehttp 18528 11444 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+INFO 2025-08-24 14:53:23,025 basehttp 18528 11444 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2025-08-24 14:53:23,027 basehttp 18528 14588 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-08-24 14:53:29,816 basehttp 18528 14588 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-08-24 14:53:29,833 basehttp 18528 14588 "GET /admin/ HTTP/1.1" 200 9425
+INFO 2025-08-24 14:53:29,854 basehttp 18528 14588 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-08-24 14:53:29,869 basehttp 18528 11444 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-08-24 14:53:29,869 basehttp 18528 14588 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-08-24 14:53:53,445 basehttp 18528 5720 "OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+WARNING 2025-08-24 14:53:53,451 log 18528 5720 Bad Request: /api/auth/register/
+WARNING 2025-08-24 14:53:53,451 basehttp 18528 5720 "POST /api/auth/register/ HTTP/1.1" 400 50
+INFO 2025-08-24 14:53:57,227 basehttp 18528 5720 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+WARNING 2025-08-24 14:53:57,229 log 18528 5720 Bad Request: /api/auth/login/
+WARNING 2025-08-24 14:53:57,229 basehttp 18528 5720 "POST /api/auth/login/ HTTP/1.1" 400 56
+WARNING 2025-08-24 14:53:59,187 log 18528 5720 Bad Request: /api/auth/login/
+WARNING 2025-08-24 14:53:59,188 basehttp 18528 5720 "POST /api/auth/login/ HTTP/1.1" 400 56
+WARNING 2025-08-24 14:54:00,275 log 18528 5720 Bad Request: /api/auth/login/
+WARNING 2025-08-24 14:54:00,275 basehttp 18528 5720 "POST /api/auth/login/ HTTP/1.1" 400 56
+INFO 2025-08-24 14:54:09,667 basehttp 18528 14588 "GET /admin/auth/group/add/ HTTP/1.1" 200 15568
+INFO 2025-08-24 14:54:09,686 basehttp 18528 14588 "GET /static/admin/css/forms.css HTTP/1.1" 200 9090
+INFO 2025-08-24 14:54:09,700 basehttp 18528 22560 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-08-24 14:54:09,701 basehttp 18528 22592 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-08-24 14:54:09,702 basehttp 18528 11668 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9042
+INFO 2025-08-24 14:54:09,705 basehttp 18528 3028 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-08-24 14:54:09,707 basehttp 18528 22560 "GET /static/admin/js/actions.js HTTP/1.1" 200 8067
+INFO 2025-08-24 14:54:09,709 basehttp 18528 14588 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-24 14:54:09,710 basehttp 18528 22592 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15492
+INFO 2025-08-24 14:54:09,710 basehttp 18528 3028 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-08-24 14:54:09,711 basehttp 18528 11668 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11800
+INFO 2025-08-24 14:54:09,713 basehttp 18528 22560 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-08-24 14:54:09,714 basehttp 18528 11668 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-08-24 14:54:09,715 basehttp 18528 11444 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-08-24 14:54:09,717 basehttp 18528 22592 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-08-24 14:54:09,721 basehttp 18528 22592 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-08-24 14:54:09,757 basehttp 18528 22592 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-08-24 14:54:09,757 basehttp 18528 11444 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-08-24 14:54:15,803 basehttp 18528 11444 "GET /admin/ HTTP/1.1" 200 9425
+WARNING 2025-08-24 14:54:53,040 log 18528 5720 Bad Request: /api/auth/register/
+WARNING 2025-08-24 14:54:53,041 basehttp 18528 5720 "POST /api/auth/register/ HTTP/1.1" 400 50
+WARNING 2025-08-24 14:56:18,128 log 18528 25420 Bad Request: /api/auth/register/
+WARNING 2025-08-24 14:56:18,128 basehttp 18528 25420 "POST /api/auth/register/ HTTP/1.1" 400 107
+ERROR 2025-08-24 14:58:15,831 views 18528 1016 User registration failed: type object 'Token' has no attribute 'objects'
+ERROR 2025-08-24 14:58:15,832 log 18528 1016 Internal Server Error: /api/auth/register/
+ERROR 2025-08-24 14:58:15,833 basehttp 18528 1016 "POST /api/auth/register/ HTTP/1.1" 500 90
+INFO 2025-08-24 14:58:46,883 autoreload 18528 16732 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 14:58:47,426 autoreload 9888 13068 Watching for file changes with StatReloader
+INFO 2025-08-24 14:59:11,613 views 9888 22108 New user registered: test@example.com
+INFO 2025-08-24 14:59:11,621 basehttp 9888 22108 "POST /api/auth/register/ HTTP/1.1" 201 433
+WARNING 2025-08-24 14:59:13,650 log 9888 18140 Bad Request: /api/auth/login/
+WARNING 2025-08-24 14:59:13,651 basehttp 9888 18140 "POST /api/auth/login/ HTTP/1.1" 400 56
+INFO 2025-08-24 14:59:15,690 views 9888 12668 Pill reminder created: 109d3a39-c3c0-46ec-a568-0a046c0eb8ce for user test@example.com
+ERROR 2025-08-24 14:59:15,718 log 9888 12668 Internal Server Error: /api/pill-reminders/
+Traceback (most recent call last):
+  File "C:\Users\naman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\naman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\naman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\naman\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\naman\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\naman\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\naman\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\naman\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\naman\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\naman\react-demo\backend\health_api\views.py", line 285, in perform_create
+    message=f"Pill reminder '{reminder.medication_name}' has been set for {reminder.times}",
+                              ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PillReminder' object has no attribute 'medication_name'
+ERROR 2025-08-24 14:59:15,723 basehttp 9888 12668 "POST /api/pill-reminders/ HTTP/1.1" 500 108410
+INFO 2025-08-24 15:00:12,042 autoreload 9888 13068 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:00:12,585 autoreload 19024 8328 Watching for file changes with StatReloader
+INFO 2025-08-24 15:00:25,627 basehttp 19024 5064 "GET / HTTP/1.1" 302 0
+INFO 2025-08-24 15:00:25,642 basehttp 19024 5064 "GET /api/ HTTP/1.1" 200 4826
+INFO 2025-08-24 15:01:12,738 basehttp 19024 19524 "OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+WARNING 2025-08-24 15:01:12,747 log 19024 19524 Bad Request: /api/auth/register/
+WARNING 2025-08-24 15:01:12,747 basehttp 19024 19524 "POST /api/auth/register/ HTTP/1.1" 400 50
+INFO 2025-08-24 15:01:17,073 basehttp 19024 19524 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+WARNING 2025-08-24 15:01:17,075 log 19024 19524 Bad Request: /api/auth/login/
+WARNING 2025-08-24 15:01:17,076 basehttp 19024 19524 "POST /api/auth/login/ HTTP/1.1" 400 56
+WARNING 2025-08-24 15:01:23,749 log 19024 19524 Bad Request: /api/auth/login/
+WARNING 2025-08-24 15:01:23,750 basehttp 19024 19524 "POST /api/auth/login/ HTTP/1.1" 400 56
+INFO 2025-08-24 15:02:02,410 views 19024 19524 New user registered: kartikpant2005@gmail.com
+INFO 2025-08-24 15:02:02,418 basehttp 19024 19524 "POST /api/auth/register/ HTTP/1.1" 201 434
+INFO 2025-08-24 15:02:31,834 basehttp 19024 19524 "OPTIONS /api/users/profile/ HTTP/1.1" 200 0
+INFO 2025-08-24 15:02:31,840 basehttp 19024 19524 "GET /api/users/profile/ HTTP/1.1" 200 333
+INFO 2025-08-24 15:02:40,765 basehttp 19024 5064 "GET /api/ HTTP/1.1" 200 4826
+INFO 2025-08-24 15:02:46,572 basehttp 19024 5064 "GET /admin/ HTTP/1.1" 200 10111
+INFO 2025-08-24 15:02:54,934 basehttp 19024 5064 "GET /admin/authtoken/tokenproxy/add/ HTTP/1.1" 200 12240
+INFO 2025-08-24 15:02:54,970 basehttp 19024 5064 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-24 15:02:55,015 basehttp 19024 5064 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-08-24 15:02:56,646 basehttp 19024 5064 "GET /admin/ HTTP/1.1" 200 10111
+INFO 2025-08-24 15:18:25,828 autoreload 19024 8328 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:18:26,248 autoreload 26792 27688 Watching for file changes with StatReloader
+INFO 2025-08-24 15:19:16,020 autoreload 26792 27688 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:19:16,384 autoreload 27232 28024 Watching for file changes with StatReloader
+INFO 2025-08-24 15:23:15,917 autoreload 27232 28024 C:\Users\naman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django_filters\utils.py changed, reloading.
+INFO 2025-08-24 15:23:16,913 autoreload 25164 16316 Watching for file changes with StatReloader
+INFO 2025-08-24 15:23:40,830 autoreload 25164 16316 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:23:41,706 autoreload 24456 14080 Watching for file changes with StatReloader
+INFO 2025-08-24 15:23:43,029 autoreload 24456 14080 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:23:43,887 autoreload 26816 27120 Watching for file changes with StatReloader
+INFO 2025-08-24 15:34:43,694 autoreload 26816 27120 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:34:44,604 autoreload 6816 24000 Watching for file changes with StatReloader
+INFO 2025-08-24 15:34:45,977 autoreload 6816 24000 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:34:46,722 autoreload 21440 28488 Watching for file changes with StatReloader
+INFO 2025-08-24 15:37:17,409 autoreload 21440 28488 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:37:18,282 autoreload 26980 22436 Watching for file changes with StatReloader
+INFO 2025-08-24 15:37:20,667 autoreload 26980 22436 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:37:21,766 autoreload 19524 7044 Watching for file changes with StatReloader
+INFO 2025-08-24 15:38:11,562 autoreload 19524 7044 C:\Users\naman\react-demo\backend\users\views.py changed, reloading.
+INFO 2025-08-24 15:38:12,428 autoreload 21424 21364 Watching for file changes with StatReloader
+INFO 2025-08-24 15:38:13,772 autoreload 21424 21364 C:\Users\naman\react-demo\backend\users\views.py changed, reloading.
+INFO 2025-08-24 15:38:14,586 autoreload 22564 21840 Watching for file changes with StatReloader
+INFO 2025-08-24 15:39:00,167 autoreload 22564 21840 C:\Users\naman\react-demo\backend\users\serializers.py changed, reloading.
+INFO 2025-08-24 15:39:00,999 autoreload 27176 8744 Watching for file changes with StatReloader
+INFO 2025-08-24 15:39:04,395 autoreload 27176 8744 C:\Users\naman\react-demo\backend\users\serializers.py changed, reloading.
+INFO 2025-08-24 15:39:05,352 autoreload 22048 24348 Watching for file changes with StatReloader
+INFO 2025-08-24 15:39:55,218 autoreload 22048 24348 C:\Users\naman\react-demo\backend\dashboard\models.py changed, reloading.
+INFO 2025-08-24 15:39:56,238 autoreload 28592 18624 Watching for file changes with StatReloader
+INFO 2025-08-24 15:39:58,649 autoreload 28592 18624 C:\Users\naman\react-demo\backend\dashboard\models.py changed, reloading.
+INFO 2025-08-24 15:39:59,520 autoreload 27228 15656 Watching for file changes with StatReloader
+INFO 2025-08-24 15:40:13,686 autoreload 27228 15656 C:\Users\naman\react-demo\backend\reminders\views.py changed, reloading.
+INFO 2025-08-24 15:40:14,621 autoreload 25608 28016 Watching for file changes with StatReloader
+INFO 2025-08-24 15:40:27,612 autoreload 25608 28016 C:\Users\naman\react-demo\backend\reminders\views.py changed, reloading.
+INFO 2025-08-24 15:40:28,571 autoreload 28052 10728 Watching for file changes with StatReloader
+INFO 2025-08-24 15:40:30,934 autoreload 28052 10728 C:\Users\naman\react-demo\backend\reminders\views.py changed, reloading.
+INFO 2025-08-24 15:40:31,866 autoreload 2648 3920 Watching for file changes with StatReloader
+INFO 2025-08-24 15:41:31,018 autoreload 2648 3920 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:41:31,987 autoreload 23880 28560 Watching for file changes with StatReloader
+INFO 2025-08-24 15:41:33,467 autoreload 23880 28560 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:41:34,323 autoreload 17760 25196 Watching for file changes with StatReloader
+INFO 2025-08-24 15:42:26,744 autoreload 19556 18044 Watching for file changes with StatReloader
+INFO 2025-08-24 15:44:05,038 autoreload 17760 25196 C:\Users\naman\react-demo\backend\backend\settings.py changed, reloading.
+INFO 2025-08-24 15:44:05,829 autoreload 2648 27608 Watching for file changes with StatReloader
