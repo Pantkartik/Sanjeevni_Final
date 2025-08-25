@@ -38,6 +38,7 @@ import {
   X,
 } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { useAuth } from "@/contexts/AuthContext"
 
 export default function HealthDashboard() {
   const [selectedPeriod, setSelectedPeriod] = useState("week")
@@ -47,14 +48,23 @@ export default function HealthDashboard() {
     email: string
     profilePhoto: string | null
   } | null>(null)
+  const { user } = useAuth()
   const router = useRouter()
 
   useEffect(() => {
-    const storedUserData = localStorage.getItem("userData")
-    if (storedUserData) {
-      setUserData(JSON.parse(storedUserData))
+    if (user) {
+      setUserData({
+        name: user.user_metadata?.name || user.email || "User",
+        email: user.email,
+        profilePhoto: user.user_metadata?.avatar_url || null,
+      })
+    } else {
+      const storedUserData = localStorage.getItem("userData")
+      if (storedUserData) {
+        setUserData(JSON.parse(storedUserData))
+      }
     }
-  }, [])
+  }, [user])
 
   const handleDownloadData = () => {
     const data = {

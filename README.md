@@ -19,12 +19,13 @@ Problem Statement
 
 Technology Stack
 
-- Frontend: React.js
-- Backend: Django (Python REST API)
+- Frontend: React.js,Next.js,Typescript,Javascript
+
+- Backend: Django (Python REST API),supabase
 - AI/ML: PyTorch, YOLOv8, EfficientNet, rule-based chatbot engine
 - Database: PostgreSQL
 - Authentication & Notifications: Firebase
-- Deployment: Frontend on Netlify, Backend on Render or Railway
+- Deployment: Frontend on firebase , Backend on supabase, django
 - Version Control & Tools: GitHub, REST APIs
 
 Architecture

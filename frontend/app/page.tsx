@@ -609,6 +609,202 @@ export default function LandingPage() {
 
 
 
+      <section id="about-section" className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-sans">About Sanjeevni</h3>
+          <p className="text-lg text-muted-foreground font-serif mb-6">
+            Sanjeevni is an AI-powered healthcare platform designed to empower individuals and families across India with smart health management tools. Our mission is to make advanced healthcare accessible, personalized, and proactive for everyone. We combine cutting-edge technology with a deep understanding of the Indian healthcare ecosystem to deliver features like health predictions, pill reminders, mental health tracking, teleconsultation, and community support—all in one place.
+          </p>
+          <div className="flex flex-col md:flex-row gap-8 justify-center mt-8">
+            <div className="flex-1 bg-muted rounded-lg p-6 shadow">
+              <h4 className="font-semibold mb-2 font-sans">Our Vision</h4>
+              <p className="text-muted-foreground font-serif">To revolutionize healthcare delivery and empower users to take charge of their health journey.</p>
+            </div>
+            <div className="flex-1 bg-muted rounded-lg p-6 shadow">
+              <h4 className="font-semibold mb-2 font-sans">Our Values</h4>
+              <p className="text-muted-foreground font-serif">Innovation, accessibility, privacy, and compassion guide everything we do.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {showDemo && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <Card className="w-full max-w-2xl shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-2xl font-sans flex items-center gap-2">
+                <Play className="w-6 h-6 text-primary" />
+                Sanjeevni Platform Demo
+              </CardTitle>
+              <CardDescription className="font-serif">See how our AI-powered healthcare platform works</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+                <div className="text-center">
+                  <Play className="w-16 h-16 text-primary mx-auto mb-4" />
+                  <p className="text-lg font-medium font-sans">Interactive Demo</p>
+                  <p className="text-muted-foreground font-serif">Experience all features in action</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <Button
+                  onClick={() => {
+                    setShowDemo(false)
+                    setShowAuth(true)
+                  }}
+                >
+                  Try It Now
+                </Button>
+                <Button variant="outline" onClick={() => setShowDemo(false)}>
+                  Close
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
+
+      {showAuth && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <Card className="w-full max-w-md shadow-xl max-h-[90vh] overflow-y-auto">
+            <CardHeader className="text-center">
+              <CardTitle className="text-2xl font-sans">Join Sanjeevni Today</CardTitle>
+              <CardDescription className="font-serif">
+                Start your journey to better health with AI-powered insights
+              </CardDescription>
+              <Alert className="mt-4">
+                <AlertTriangle className="h-4 w-4" />
+                <AlertDescription className="text-xs">
+                  This is a prototype platform. Always consult healthcare professionals for medical advice.
+                </AlertDescription>
+              </Alert>
+            </CardHeader>
+            <CardContent>
+              <Tabs defaultValue="signup" className="w-full">
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="signup">Sign Up</TabsTrigger>
+                  <TabsTrigger value="login">Login</TabsTrigger>
+                </TabsList>
+
+                {authError && (
+                  <Alert variant="destructive">
+                    <AlertTriangle className="h-4 w-4" />
+                    <AlertDescription>{authError}</AlertDescription>
+                  </Alert>
+                )}
+
+                <TabsContent value="signup" className="space-y-4">
+                  <form onSubmit={(e) => handleAuthWithRedirect(e, "signup")} className="space-y-4">
+                    <div className="space-y-2 text-center">
+                      <Label>Profile Photo (Optional)</Label>
+                      <div className="flex flex-col items-center gap-3">
+                        <Avatar className="w-20 h-20">
+                          <AvatarImage src={profilePhoto || undefined} />
+                          <AvatarFallback>
+                            <Upload className="w-8 h-8 text-muted-foreground" />
+                          </AvatarFallback>
+                        </Avatar>
+                        <Label htmlFor="photo-upload" className="cursor-pointer">
+                          <Button type="button" variant="outline" size="sm" asChild>
+                            <span>
+                              <Upload className="w-4 h-4 mr-2" />
+                              Upload Photo
+                            </span>
+                          </Button>
+                        </Label>
+                        <Input
+                          id="photo-upload"
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          onChange={handlePhotoUpload}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Full Name</Label>
+                      <Input id="name" name="name" placeholder="Enter your full name" required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input id="email" name="email" type="email" placeholder="Enter your email" required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="password">Password</Label>
+                      <Input id="password" name="password" type="password" placeholder="Create a password" required />
+                    </div>
+                    <Button type="submit" className="w-full" disabled={isLoading}>
+                      {isLoading ? "Creating Account..." : "Create Account"}
+                    </Button>
+                  </form>
+                  <p className="text-sm text-muted-foreground text-center font-serif">
+                    By signing up, you agree to our Terms of Service and Privacy Policy
+                  </p>
+                </TabsContent>
+
+                <TabsContent value="login" className="space-y-4">
+                  <form onSubmit={(e) => handleAuthWithRedirect(e, "login")} className="space-y-4">
+                    <div className="space-y-2 text-center">
+                      <Label>Update Profile Photo (Optional)</Label>
+                      <div className="flex flex-col items-center gap-3">
+                        <Avatar className="w-20 h-20">
+                          <AvatarImage src={profilePhoto || undefined} />
+                          <AvatarFallback>
+                            <Upload className="w-8 h-8 text-muted-foreground" />
+                          </AvatarFallback>
+                        </Avatar>
+                        <Label htmlFor="login-photo-upload" className="cursor-pointer">
+                          <Button type="button" variant="outline" size="sm" asChild>
+                            <span>
+                              <Upload className="w-4 h-4 mr-2" />
+                              Upload Photo
+                            </span>
+                          </Button>
+                        </Label>
+                        <Input
+                          id="login-photo-upload"
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          onChange={handlePhotoUpload}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="login-email">Email</Label>
+                      <Input id="login-email" name="email" type="email" placeholder="Enter your email" required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="login-password">Password</Label>
+                      <Input
+                        id="login-password"
+                        name="password"
+                        type="password"
+                        placeholder="Enter your password"
+                        required
+                      />
+                    </div>
+                    <Button type="submit" className="w-full" disabled={isLoading}>
+                      {isLoading ? "Signing In..." : "Sign In"}
+                    </Button>
+                  </form>
+                  <p className="text-sm text-muted-foreground text-center font-serif">
+                    <button className="text-primary hover:underline">Forgot your password?</button>
+                  </p>
+                </TabsContent>
+              </Tabs>
+              <Button variant="ghost" className="w-full mt-4" onClick={() => setShowAuth(false)}>
+                Cancel
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      )}
+
+
+
       <footer id="about" className="bg-card border-t py-12 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8">
@@ -733,7 +929,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="border-t mt-8 pt-8 text-center text-muted-foreground font-serif">
-            <p>&copy; 2024 Sanjeevni. All rights reserved.</p>
+            <p>&copy; 2025 Sanjeevni. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -24,13 +24,14 @@ import { Pill, Plus, Clock, CheckCircle, AlertCircle, Package, TrendingUp, Edit,
 import { HealthDashboardNav } from "@/components/health-dashboard-nav"
 import { useToast } from "@/hooks/use-toast"
 import { useAuth } from "@/contexts/AuthContext"
-import { notificationService, PillReminder } from "@/services/notificationService"
+import { pillReminderService, PillReminder } from "@/lib/supabase"
 
 interface Medication extends PillReminder {
   adherence: number
   nextDose: string
   color: string
   taken: boolean
+  stock: number
 }
 
 export default function PillReminderPage() {
@@ -38,10 +39,10 @@ export default function PillReminderPage() {
   const [isAddingMedication, setIsAddingMedication] = useState(false)
   const [medications, setMedications] = useState<Medication[]>([])
   const [newMedication, setNewMedication] = useState({
-    name: "",
+    medication_name: "",
     dosage: "",
     frequency: "",
-    times: "",
+    time: "",
     stock: "",
     notes: "",
     caregiverNotify: false,
@@ -51,53 +52,32 @@ export default function PillReminderPage() {
 
   useEffect(() => {
     if (user) {
-      // Initialize notification service
-      notificationService.initialize(user.uid);
-      
-      // Load medications from Firebase
-      loadMedications();
-      
-      // Subscribe to real-time updates
-      const unsubscribe = notificationService.subscribeToReminders(user.uid, (reminders) => {
-        const medicationsWithExtras = reminders.map(reminder => ({
-          ...reminder,
-          adherence: Math.floor(Math.random() * 100),
-          nextDose: "2:00 PM",
-          color: `hsl(${Math.random() * 360}, 70%, 50%)`,
-          taken: false,
-        }));
-        setMedications(medicationsWithExtras);
-      });
-
-      return () => {
-        unsubscribe();
-        notificationService.cleanup();
-      };
+      loadMedications()
     }
-  }, [user]);
+  }, [user])
 
   const loadMedications = async () => {
-    if (!user) return;
-    
+    if (!user) return
     try {
-      const reminders = await notificationService.getPillReminders(user.uid);
+      const reminders = await pillReminderService.getUserReminders(user.id)
       const medicationsWithExtras = reminders.map(reminder => ({
         ...reminder,
         adherence: Math.floor(Math.random() * 100),
-        nextDose: "2:00 PM",
+        nextDose: reminder.time,
         color: `hsl(${Math.random() * 360}, 70%, 50%)`,
         taken: false,
-      }));
-      setMedications(medicationsWithExtras);
+        stock: 30 // Default stock value
+      }))
+      setMedications(medicationsWithExtras)
     } catch (error) {
-      console.error('Error loading medications:', error);
+      console.error('Error loading medications:', error)
       toast({
         title: "Error",
         description: "Failed to load medications",
         variant: "destructive",
-      });
+      })
     }
-  };
+  }
 
   const handleAddMedication = async () => {
     if (!user) {
@@ -109,7 +89,7 @@ export default function PillReminderPage() {
       return
     }
 
-    if (!newMedication.name.trim()) {
+    if (!newMedication.medication_name.trim()) {
       toast({
         title: "Error",
         description: "Please enter medication name",
@@ -136,7 +116,7 @@ export default function PillReminderPage() {
       return
     }
 
-    if (!newMedication.times.trim()) {
+    if (!newMedication.time.trim()) {
       toast({
         title: "Error",
         description: "Please enter reminder times",
@@ -155,7 +135,7 @@ export default function PillReminderPage() {
     }
 
     try {
-      const timesArray = newMedication.times
+      const timesArray = newMedication.time
         .split(",")
         .map((time) => time.trim())
         .filter((time) => time.length > 0)
@@ -170,17 +150,17 @@ export default function PillReminderPage() {
       }
 
       const reminderData = {
-        userId: user.uid,
-        name: newMedication.name.trim(),
+        user_id: user.uid,
+        medication_name: newMedication.medication_name.trim(),
         dosage: newMedication.dosage.trim(),
         frequency: newMedication.frequency,
-        times: timesArray,
+        time: timesArray.join(", "),
         stock: Number.parseInt(newMedication.stock),
         notes: newMedication.notes.trim(),
         caregiverNotify: newMedication.caregiverNotify,
       }
 
-      await notificationService.addPillReminder(reminderData)
+      await pillReminderService.addReminder(reminderData)
 
       toast({
         title: "Success",
@@ -188,10 +168,10 @@ export default function PillReminderPage() {
       })
 
       setNewMedication({
-        name: "",
+        medication_name: "",
         dosage: "",
         frequency: "",
-        times: "",
+        time: "",
         stock: "",
         notes: "",
         caregiverNotify: false,
@@ -201,7 +181,7 @@ export default function PillReminderPage() {
 
       toast({
         title: "Success!",
-        description: `${newMedication.name} has been added to your medication list`,
+        description: `${newMedication.medication_name} has been added to your medication list`,
       })
     } catch (error) {
       console.error("Error adding medication:", error)
@@ -215,7 +195,7 @@ export default function PillReminderPage() {
 
   const handleDeleteMedication = async (id: string) => {
     try {
-      await notificationService.deletePillReminder(id)
+      await pillReminderService.deleteReminder(id)
       toast({
         title: "Medication Removed",
         description: "Medication has been removed from your list",
@@ -240,7 +220,7 @@ export default function PillReminderPage() {
       ? Math.round(medications.reduce((sum, med) => sum + med.adherence, 0) / medications.length)
       : 0
   const todaysTaken = medications.filter((med) => med.taken).length
-  const todaysTotal = medications.reduce((sum, med) => sum + med.times.length, 0)
+  const todaysTotal = medications.reduce((sum, med) => sum + (med.time ? med.time.split(",").length : 0), 0)
   const lowStockCount = medications.filter((med) => med.stock <= 10).length
 
   return (
@@ -275,8 +255,8 @@ export default function PillReminderPage() {
                     <Input
                       id="med-name"
                       placeholder="e.g., Metformin"
-                      value={newMedication.name}
-                      onChange={(e) => setNewMedication({ ...newMedication, name: e.target.value })}
+                      value={newMedication.medication_name}
+                      onChange={(e) => setNewMedication({ ...newMedication, medication_name: e.target.value })}
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
@@ -322,8 +302,8 @@ export default function PillReminderPage() {
                     <Input
                       id="times"
                       placeholder="e.g., 8:00 AM, 8:00 PM"
-                      value={newMedication.times}
-                      onChange={(e) => setNewMedication({ ...newMedication, times: e.target.value })}
+                      value={newMedication.time}
+                      onChange={(e) => setNewMedication({ ...newMedication, time: e.target.value })}
                     />
                   </div>
                   <div className="space-y-2">
@@ -353,10 +333,10 @@ export default function PillReminderPage() {
                       variant="outline"
                       onClick={() => {
                         setNewMedication({
-                          name: "",
+                          medication_name: "",
                           dosage: "",
                           frequency: "",
-                          times: "",
+                          time: "",
                           stock: "",
                           notes: "",
                           caregiverNotify: false,
@@ -460,7 +440,7 @@ export default function PillReminderPage() {
                               <Pill className="w-6 h-6 text-white" />
                             </div>
                             <div>
-                              <CardTitle className="font-sans">{med.name}</CardTitle>
+                              <CardTitle className="font-sans">{med.medication_name}</CardTitle>
                               <CardDescription className="font-serif">
                                 {med.dosage} • {med.frequency}
                               </CardDescription>
@@ -527,9 +507,9 @@ export default function PillReminderPage() {
                           </div>
                         </div>
                         <div className="mt-4 flex flex-wrap gap-2">
-                          {med.times.map((time, index) => (
+                          {med.time.split(',').map((time, index) => (
                             <Badge key={index} variant="outline" className="font-serif">
-                              {time}
+                              {time.trim()}
                             </Badge>
                           ))}
                         </div>
@@ -657,7 +637,7 @@ export default function PillReminderPage() {
                             <Pill className="w-4 h-4 text-white" />
                           </div>
                           <div className="flex-1">
-                            <p className="text-sm font-medium font-sans">{med.name}</p>
+                            <p className="text-sm font-medium font-sans">{med.medication_name}</p>
                             <Progress value={med.adherence} className="mt-1" />
                           </div>
                           <span className="text-sm text-muted-foreground font-serif">{med.adherence}%</span>

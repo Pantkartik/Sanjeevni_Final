@@ -13,7 +13,11 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
   const router = useRouter();
 
   useEffect(() => {
-    if (!loading && !user) {
+    // Check localStorage for user data as a backup
+    const storedUser = localStorage.getItem('userData');
+    
+    // Only redirect if we're not loading, there's no user, and no stored user data
+    if (!loading && !user && !storedUser) {
       router.push('/');
     }
   }, [user, loading, router]);
